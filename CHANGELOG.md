@@ -9,7 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Hello world
+
 ### Changed
+
+- Stuff
+- Things
 
 ### Deprecated
 
@@ -18,3 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### Security
+
+## [0.1.0] - 2022-03-02
+
+### Added
+
+- Created the package
+
+[unreleased]: https://github.com/Renddslow/the-chronicler/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Renddslow/the-chronicler/releases/tag/v0.1.0

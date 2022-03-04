@@ -6,9 +6,11 @@ import kleur from 'kleur';
 import { unified } from 'unified';
 import remarkStringify from 'remark-stringify';
 import remarkParse from 'remark-parse';
+import semver from 'semver';
 
 import catchify from './utils/catchify';
 import releasePlugin from './releasePlugin';
+import getNextVersionFromKeyword from './getNextVersionFromKeyword';
 
 type Opts = {
   filename?: string;
@@ -38,9 +40,18 @@ const release = async (version: string, opts: Opts) => {
 
   const updatedChangelog = await unified()
     .use(remarkParse)
-    .use(releasePlugin)
+    .use(releasePlugin, {
+      linkPattern: config.linkPattern,
+      version,
+    })
     // @ts-ignore
-    .use(remarkStringify)
+    .use(remarkStringify, {
+      bullet: '-',
+      emphasis: '_',
+      incrementListMarker: false,
+      listItemIndent: 'one',
+      tightDefinitions: true,
+    })
     .process(changelog);
 
   console.log(kleur.gray('Saving updated changelog...'));
