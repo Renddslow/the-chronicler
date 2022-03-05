@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fixed an issue where the bin could not be executed because of an incorrect hashbang.
+
 ### Security
 
 ## [0.2.0] - 2022-03-05
