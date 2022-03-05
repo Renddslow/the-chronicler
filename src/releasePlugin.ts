@@ -1,11 +1,13 @@
 import semver from 'semver';
 import { Root } from 'remark-parse/lib';
-import { LinkReference, PhrasingContent } from 'mdast';
+import { LinkReference, PhrasingContent, Definition, Content } from 'mdast';
 
 import getNextVersionFromKeyword from './getNextVersionFromKeyword';
 import unreleasedSectionUnist from './unreleasedSectionUnist';
 import makeVersionSection from './makeVersionSection';
 import { klona } from 'klona';
+import addDefinition from './addDefinition';
+import sortDefinitions from './sortDefinitions';
 
 type Increment = 'major' | 'minor' | 'patch';
 
@@ -37,6 +39,8 @@ function releasePlugin(settings: Settings) {
         (node) => (node.type === 'heading' && node.depth === 2) || node.type === 'definition',
       );
 
+    const definitionsStartIdx = tree.children.findIndex((node) => node.type === 'definition');
+
     const unreleasedSection = tree.children.slice(
       unreleasedStartIdx,
       unreleasedEndIdx + unreleasedStartIdx + 1,
@@ -55,16 +59,27 @@ function releasePlugin(settings: Settings) {
       process.exit(0);
     }
 
+    const currentDefinitions = (tree.children.slice(definitionsStartIdx) as Definition[])
+      .filter((d: Definition) => d.identifier !== 'unreleased')
+      .sort(sortDefinitions);
+
+    const definitions = [
+      addDefinition('HEAD', version, settings.linkPattern, true),
+      addDefinition(version, currentDefinitions[0].identifier, settings.linkPattern),
+      ...currentDefinitions,
+    ];
+
     // @ts-ignore
     tree.children = [
-      ...klona(tree.children).slice(0, unreleasedStartIdx),
+      ...tree.children.slice(0, unreleasedStartIdx),
       ...unreleasedSectionUnist,
       makeVersionSection(version),
       ...filteredList,
-      ...klona(tree.children).slice(unreleasedEndIdx + unreleasedStartIdx),
+      ...tree.children.slice(unreleasedEndIdx + unreleasedStartIdx, definitionsStartIdx),
+      ...definitions,
     ];
 
-    console.log(tree);
+    // console.log(tree);
   };
 }
 

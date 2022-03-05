@@ -7,6 +7,9 @@
   "license": "MIT",
   "author": "Matt McElwee <mubatt@wyopub.com>",
   "main": "dist/index.js",
+  "bin": {
+    "the-chronicler": "dist/index.js"
+  },
   "scripts": {
     "prestart": "yarn build",
     "start": "node dist/index.js",
@@ -16,7 +19,7 @@
     "coverage": "nyc ava"
   },
   "chronicler": {
-    "linkPattern": "https://github.com/Renddslow/the-chronicler/compare/{prev}...{next}"
+    "linkPattern": "https://github.com/Renddslow/the-chronicler/compare/{{prev}}...{{next}}"
   },
   "type": "module",
   "lint-staged": {
@@ -61,6 +64,7 @@
     "remark-stringify": "^10.0.2",
     "sade": "^1.8.1",
     "semver": "^7.3.5",
+    "templite": "^1.2.0",
     "unified": "^10.1.1",
     "unist-builder": "^3.0.0",
     "unist-util-visit": "^4.1.0"

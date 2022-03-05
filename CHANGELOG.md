@@ -9,12 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Hello world
+- Created a `release` script to move all unreleased changes into a new version section.
 
 ### Changed
-
-- Stuff
-- Things
 
 ### Deprecated
 
