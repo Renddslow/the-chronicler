@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+### Security
+
+## [0.2.1] - 2022-03-05
+
+### Fixed
+
 - Fixed an issue where the bin could not be executed because of an incorrect hashbang.
 
 ### Security
@@ -35,6 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created the package
 
-[unreleased]: https://github.com/Renddslow/the-chronicler/compare/0.2.0...HEAD
+[unreleased]: https://github.com/Renddslow/the-chronicler/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/Renddslow/the-chronicler/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/Renddslow/the-chronicler/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/Renddslow/the-chronicler/releases/tag/v0.1.0
