@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 import sade from 'sade';
 import release from './release';
 
