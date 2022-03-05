@@ -5,9 +5,9 @@ import semver from 'semver';
 const getNextVersionFromKeyword = (tree: Node, keyword: 'major' | 'minor' | 'patch'): string => {
   const versions: string[] = [];
 
-  visit(tree, 'definition', (node: { label: string }) => {
-    if (node.label !== 'Unreleased') {
-      versions.push(node.label);
+  visit(tree, 'definition', (node: { identifier: string }) => {
+    if (node.identifier !== 'unreleased') {
+      versions.push(node.identifier);
     }
   });
 
