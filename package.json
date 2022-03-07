@@ -10,6 +10,12 @@
   "bin": {
     "the-chronicler": "dist/index.js"
   },
+  "files": [
+    "dist/index.js",
+    "CHANGELOG.md",
+    "README.md",
+    "takua.png"
+  ],
   "scripts": {
     "prestart": "yarn build",
     "start": "node dist/index.js",

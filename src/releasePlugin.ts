@@ -75,7 +75,7 @@ function releasePlugin(settings: Settings) {
       ...unreleasedSectionUnist,
       makeVersionSection(version),
       ...filteredList,
-      ...tree.children.slice(unreleasedEndIdx + unreleasedStartIdx, definitionsStartIdx),
+      ...tree.children.slice(unreleasedEndIdx + unreleasedStartIdx + 1, definitionsStartIdx),
       ...definitions,
     ];
 
