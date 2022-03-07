@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [0.4.0] - 2022-03-07
+
+### Changed
+
+- Versions can now be submitted with or without a `v` and will result in a numbered semver version with no prefix in the changelog.
+- Updated the README to better describe what the `version` argument does.
+
 ## [0.3.1] - 2022-03-07
 
 ### Fixed
@@ -54,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created the package
 
-[unreleased]: https://github.com/Renddslow/the-chronicler/compare/0.3.1...HEAD
+[unreleased]: https://github.com/Renddslow/the-chronicler/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/Renddslow/the-chronicler/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/Renddslow/the-chronicler/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/Renddslow/the-chronicler/compare/0.2.1...0.3.0
 [0.2.1]: https://github.com/Renddslow/the-chronicler/compare/0.2.0...0.2.1

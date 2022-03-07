@@ -49,6 +49,10 @@ The Chronicler exposes one command at present for releasing a CHANGELOG.
     -h, --help           Displays this message
 ```
 
+#### `version`
+
+Release is either a Semver level (`major`, `minor`, `patch`) or a Semver version, with or without a `v` prefix.
+
 ## Config
 
 The Chronicler uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for configuration file support. This means you can configure The Chronicler via (in order of precedence):

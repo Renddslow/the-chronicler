@@ -18,9 +18,10 @@ type Settings = {
 
 function releasePlugin(settings: Settings) {
   return (tree: Root) => {
-    const version = semver.valid(settings.version)
-      ? settings.version
-      : getNextVersionFromKeyword(tree, settings.version as Increment);
+    const baseVersion = settings.version.replace(/^v/, '');
+    const version = semver.valid(baseVersion)
+      ? baseVersion
+      : getNextVersionFromKeyword(tree, baseVersion as Increment);
 
     const unreleasedStartIdx = tree.children.findIndex((node) => {
       return (

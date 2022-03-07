@@ -6,11 +6,9 @@ import kleur from 'kleur';
 import { unified } from 'unified';
 import remarkStringify from 'remark-stringify';
 import remarkParse from 'remark-parse';
-import semver from 'semver';
 
 import catchify from './utils/catchify';
 import releasePlugin from './releasePlugin';
-import getNextVersionFromKeyword from './getNextVersionFromKeyword';
 
 type Opts = {
   filename?: string;
