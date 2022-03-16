@@ -1,0 +1,9 @@
+name: 'Update Changelog with Released Changes'
+description: 'Update Changelog with Released changes based on semver level or version'
+inputs:
+  version:
+    description: 'Next version or Semver level'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

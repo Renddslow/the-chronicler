@@ -1,0 +1,9 @@
+name: Update Changelog with Released Changes
+
+on: push
+
+jobs:
+  changelog-update:
+    runs-on: ubuntu-latest
+    name: Extract unreleased logs
+
